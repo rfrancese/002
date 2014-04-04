@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_Yza8ELvQEeO59O-KAUfscg" name="model">
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_pHqloLvbEeO59O-KAUfscg" name="Visualizza orari e tariffe">
+    <include xmi:type="uml:Include" xmi:id="_u0zuoLvbEeO59O-KAUfscg" addition="_pisUwLvbEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_pisUwLvbEeO59O-KAUfscg" name="Seleziona sito">
+    <include xmi:type="uml:Include" xmi:id="_wVkWwLvbEeO59O-KAUfscg" addition="_p6xdkLvbEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_p6xdkLvbEeO59O-KAUfscg" name="Ricerca sito"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tLiDsLvbEeO59O-KAUfscg" name="A_actor_usecase" memberEnd="_tLiDsbvbEeO59O-KAUfscg _tLiDtLvbEeO59O-KAUfscg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tLiDsbvbEeO59O-KAUfscg" name="actor" type="_mm4q8LvbEeO59O-KAUfscg" association="_tLiDsLvbEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tLiDsrvbEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tLiDs7vbEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tLiDtLvbEeO59O-KAUfscg" name="usecase" type="_pHqloLvbEeO59O-KAUfscg" association="_tLiDsLvbEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tLiDtbvbEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tLiDtrvbEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_QXFLcLvcEeO59O-KAUfscg" name="package1"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_rWEhcLvcEeO59O-KAUfscg" name="User"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_s3SckLvcEeO59O-KAUfscg" name="Visualizza descrizione sito">
+    <include xmi:type="uml:Include" xmi:id="_4NlmcLvcEeO59O-KAUfscg" addition="_tPln0LvcEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_tPln0LvcEeO59O-KAUfscg" name="Seleziona sito">
+    <include xmi:type="uml:Include" xmi:id="_3rp-ELvcEeO59O-KAUfscg" addition="_tZULkLvcEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_tZULkLvcEeO59O-KAUfscg" name="Ricerca sito"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5EWPULvcEeO59O-KAUfscg" name="" memberEnd="_5EWPUbvcEeO59O-KAUfscg _5EWPVLvcEeO59O-KAUfscg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5EWPUbvcEeO59O-KAUfscg" name="visualizza descrizione sito" type="_s3SckLvcEeO59O-KAUfscg" association="_5EWPULvcEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5EWPUrvcEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5EWPU7vcEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5EWPVLvcEeO59O-KAUfscg" name="actor" type="_rWEhcLvcEeO59O-KAUfscg" association="_5EWPULvcEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5EWPVbvcEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5EWPVrvcEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_IK27cLvdEeO59O-KAUfscg" name="package"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_UvaBILvdEeO59O-KAUfscg" name="User"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_WEdvkLvdEeO59O-KAUfscg" name="Visualizza News">
+    <include xmi:type="uml:Include" xmi:id="_kTgBILvdEeO59O-KAUfscg" addition="_Z5SsELvdEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ZW5JoLvdEeO59O-KAUfscg" name="Ricerca sito"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Z5SsELvdEeO59O-KAUfscg" name="Seleziona sito">
+    <include xmi:type="uml:Include" xmi:id="_li0T8LvdEeO59O-KAUfscg" addition="_ZW5JoLvdEeO59O-KAUfscg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gC1dMLvdEeO59O-KAUfscg" name="" memberEnd="_gC1dMbvdEeO59O-KAUfscg _gC1dNLvdEeO59O-KAUfscg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gC1dMbvdEeO59O-KAUfscg" name="visualizza news" type="_WEdvkLvdEeO59O-KAUfscg" association="_gC1dMLvdEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gC1dMrvdEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gC1dM7vdEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gC1dNLvdEeO59O-KAUfscg" name="user" type="_UvaBILvdEeO59O-KAUfscg" association="_gC1dMLvdEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gC1dNbvdEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gC1dNrvdEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_uw1isLvdEeO59O-KAUfscg" name="                     "/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_zV1X4LvdEeO59O-KAUfscg" name="                      ">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_06eacLvdEeO59O-KAUfscg" name="Visualizza i PDI">
+      <include xmi:type="uml:Include" xmi:id="_Lgp9ILveEeO59O-KAUfscg" addition="_1Lyz8LvdEeO59O-KAUfscg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1Lyz8LvdEeO59O-KAUfscg" name="Seleziona sito">
+      <include xmi:type="uml:Include" xmi:id="_MdpJ0LveEeO59O-KAUfscg" addition="_1iHpQLvdEeO59O-KAUfscg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1iHpQLvdEeO59O-KAUfscg" name="Ricerca sito"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_30-csLvdEeO59O-KAUfscg" name="" memberEnd="_30-csbvdEeO59O-KAUfscg _30-ctLvdEeO59O-KAUfscg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_30-csbvdEeO59O-KAUfscg" name="usecase" type="_06eacLvdEeO59O-KAUfscg" association="_30-csLvdEeO59O-KAUfscg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_30-csrvdEeO59O-KAUfscg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30-cs7vdEeO59O-KAUfscg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_30-ctLvdEeO59O-KAUfscg" name="actor" type="_z9GzQLvdEeO59O-KAUfscg" association="_30-csLvdEeO59O-KAUfscg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_30-ctbvdEeO59O-KAUfscg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30-ctrvdEeO59O-KAUfscg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_z9GzQLvdEeO59O-KAUfscg" name="User"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_rItI8LveEeO59O-KAUfscg" name="User"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_v_iVALveEeO59O-KAUfscg" name="Visualizza mappa GPS"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0bbRgLveEeO59O-KAUfscg" name="" memberEnd="_0bbRgbveEeO59O-KAUfscg _0bbRhLveEeO59O-KAUfscg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0bbRgbveEeO59O-KAUfscg" name="actor" type="_rItI8LveEeO59O-KAUfscg" association="_0bbRgLveEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0bbRgrveEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0bbRg7veEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0bbRhLveEeO59O-KAUfscg" name="isualizza mappa gps" type="_v_iVALveEeO59O-KAUfscg" association="_0bbRgLveEeO59O-KAUfscg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0bbRhbveEeO59O-KAUfscg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0bbRhrveEeO59O-KAUfscg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_mm4q8LvbEeO59O-KAUfscg" name="User"/>
+</uml:Model>
