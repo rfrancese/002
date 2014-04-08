@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_u80hgLvjEeOkJMnqM6KJ1g" name="model">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_u8_goLvjEeOkJMnqM6KJ1g" name="Descrizione sito">
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NmqGsLvmEeOkJMnqM6KJ1g" name="MessageSend" covered="_2qIygLvjEeOkJMnqM6KJ1g" message="_NmeggLvmEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_cE6K4LvkEeOkJMnqM6KJ1g" name="ActionExecSpecStart" covered="_2qIygLvjEeOkJMnqM6KJ1g" execution="_cE6x8LvkEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_cE6x8LvkEeOkJMnqM6KJ1g" name="ActionExecSpec" covered="_2qIygLvjEeOkJMnqM6KJ1g" finish="_cE6x8bvkEeOkJMnqM6KJ1g" start="_cE6K4LvkEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NmqtwLvmEeOkJMnqM6KJ1g" name="MessageRecv" covered="_CpqfkLvkEeOkJMnqM6KJ1g" message="_NmeggLvmEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_zinWALvlEeOkJMnqM6KJ1g" name="ActionExecSpec0Start" covered="_CpqfkLvkEeOkJMnqM6KJ1g" execution="_zin9ELvlEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_LG-YMLvmEeOkJMnqM6KJ1g" name="ActionExecSpec1" covered="_CpqfkLvkEeOkJMnqM6KJ1g" finish="_LG-YMbvmEeOkJMnqM6KJ1g" start="_NmqtwLvmEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_cE6x8bvkEeOkJMnqM6KJ1g" name="ActionExecSpecFinish" covered="_2qIygLvjEeOkJMnqM6KJ1g" execution="_cE6x8LvkEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_LG-YMbvmEeOkJMnqM6KJ1g" name="ActionExecSpec1Finish" covered="_CpqfkLvkEeOkJMnqM6KJ1g" execution="_LG-YMLvmEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ziokILvlEeOkJMnqM6KJ1g" name="ActionExecSpec0Finish" covered="_CpqfkLvkEeOkJMnqM6KJ1g" execution="_zin9ELvlEeOkJMnqM6KJ1g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_zin9ELvlEeOkJMnqM6KJ1g" name="ActionExecSpec0" covered="_CpqfkLvkEeOkJMnqM6KJ1g" finish="_ziokILvlEeOkJMnqM6KJ1g" start="_zinWALvlEeOkJMnqM6KJ1g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_2qIygLvjEeOkJMnqM6KJ1g" name="utente" coveredBy="_cE6K4LvkEeOkJMnqM6KJ1g _cE6x8bvkEeOkJMnqM6KJ1g _cE6x8LvkEeOkJMnqM6KJ1g _NmqGsLvmEeOkJMnqM6KJ1g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_CpqfkLvkEeOkJMnqM6KJ1g" name="MainActivity" coveredBy="_zinWALvlEeOkJMnqM6KJ1g _ziokILvlEeOkJMnqM6KJ1g _zin9ELvlEeOkJMnqM6KJ1g _LG-YMbvmEeOkJMnqM6KJ1g _LG-YMLvmEeOkJMnqM6KJ1g _NmqtwLvmEeOkJMnqM6KJ1g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_0rLgkLvlEeOkJMnqM6KJ1g" name="SearchActivity"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_6L-PoLvlEeOkJMnqM6KJ1g" name="MainSiteActivity"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_9W4FYLvlEeOkJMnqM6KJ1g" name="SiteDescriptionActivity"/>
+    <message xmi:type="uml:Message" xmi:id="_NmeggLvmEeOkJMnqM6KJ1g" name="1:Avviamento_app" receiveEvent="_NmqtwLvmEeOkJMnqM6KJ1g" sendEvent="_NmqGsLvmEeOkJMnqM6KJ1g"/>
+  </packagedElement>
+</uml:Model>
