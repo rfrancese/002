@@ -1,5 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">ArcheoTour</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- stringhe fragment_main -->
+    <string name="buttonLabel_siteSearch">Ricerca sito</string>
+    <string name="buttonLabel_showMap">Mappa</string>
+    <string name="contentDescription_logoHome">Logo home page</string>
+    <string name="title_activity_search">SearchActivity</string>
 
 </resources>
