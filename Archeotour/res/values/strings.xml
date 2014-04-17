@@ -11,5 +11,14 @@
     <string name="buttonLabel_showMap">Mappa</string>
     <string name="contentDescription_logoHome">Logo home page</string>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_gpsmap">GPSMapActivity</string>
+    <string name="title_activity_main_site">MainSiteActivity</string>
+    <string name="title_activity_pdi">PDIActivity</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_site_description">SiteDescriptionActivity</string>
+    <string name="title_activity_site_info">SiteInfoActivity</string>
 
 </resources>

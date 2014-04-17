@@ -21,6 +21,41 @@
             android:name="com.archeotour.SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
+        <activity
+            android:name="com.archeotour.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.archeotour.GPSMapActivity"
+            android:label="@string/title_activity_gpsmap" >
+        </activity>
+        <activity
+            android:name="com.archeotour.MainSiteActivity"
+            android:label="@string/title_activity_main_site" >
+        </activity>
+        <activity
+            android:name="com.archeotour.PDIActivity"
+            android:label="@string/title_activity_pdi" >
+        </activity>
+        <activity
+            android:name="com.archeotour.NewsActivity"
+            android:label="@string/title_activity_news" >
+        </activity>
+        <activity
+            android:name="com.archeotour.SiteDescriptionActivity"
+            android:label="@string/title_activity_site_description" >
+        </activity>
+        <activity
+            android:name="com.archeotour.SiteInfoActivity"
+            android:label="@string/title_activity_site_info" >
+        </activity>
     </application>
 
 </manifest>
