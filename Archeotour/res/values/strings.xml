@@ -10,6 +10,11 @@
     <string name="buttonLabel_siteSearch">Ricerca sito</string>
     <string name="buttonLabel_showMap">Mappa</string>
     <string name="contentDescription_logoHome">Logo home page</string>
+    
+    <!-- stringhe splash screen -->
+    <string name="contentDescription_splashImage">SplashScreen</string>
+    
+    
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
