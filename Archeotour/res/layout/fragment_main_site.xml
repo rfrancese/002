@@ -8,9 +8,54 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.archeotour.MainSiteActivity$PlaceholderFragment" >
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logomainactivity" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_below="@+id/imageView1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonLabel_description"
+                android:onClick="startSiteDescriptionActivity" />
+
+            <Button
+                android:id="@+id/button_pdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonLabel_pdi"
+                android:onClick="startPDIActivity" />
+
+            <Button
+                android:id="@+id/button_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonLabel_news"
+                android:onClick="startNewsActivity" />
+
+            <Button
+                android:id="@+id/button_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonLabel_info"
+                android:onClick="startInfoActivity"/>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -1,9 +1,11 @@
 package com.archeotour;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainSiteActivity extends ActionBarActivity {
 
@@ -38,4 +40,23 @@ public class MainSiteActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void startSiteDescriptionActivity(View view) {
+		Intent intent = new Intent (this, SiteDescriptionActivity.class);
+		startActivity(intent);
+	}
+	
+	public void startPDIActivity(View view) {
+		Intent intent = new Intent (this, PDIActivity.class);
+		startActivity(intent);
+	}
+	
+	public void startNewsActivity(View view) {
+		Intent intent = new Intent (this, NewsActivity.class);
+		startActivity(intent);
+	}
+	
+	public void startInfoActivity(View view) {
+		Intent intent = new Intent (this, SiteInfoActivity.class);
+		startActivity(intent);
+	}
 }

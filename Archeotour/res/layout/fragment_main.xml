@@ -27,7 +27,8 @@
         android:layout_below="@+id/imageView1"
         android:layout_marginTop="19dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/buttonLabel_siteSearch" />
+        android:text="@string/buttonLabel_siteSearch"
+         android:onClick="startSearchActivity" />
 
     <Button
         android:id="@+id/showMap"
