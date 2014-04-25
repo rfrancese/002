@@ -37,6 +37,7 @@
         android:layout_below="@+id/siteSearch"
         android:text="@string/buttonLabel_showMap"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp" />
+        android:layout_marginTop="19dp"
+        android:onClick="startGPSMapActivity" />
 
 </RelativeLayout>

@@ -45,5 +45,9 @@ public class MainActivity extends ActionBarActivity {
 		Intent intent = new Intent (this, MainSiteActivity.class);
 		startActivity(intent);
 	}
+	public void startGPSMapActivity(View view) {
+		Intent intent = new Intent (this, GPSMapActivity.class);
+		startActivity(intent);
+	}
 
 }

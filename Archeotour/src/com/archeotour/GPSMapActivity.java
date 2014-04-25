@@ -5,17 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class GPSMapActivity extends ActionBarActivity {
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
 
+public class GPSMapActivity extends ActionBarActivity {
+	private GoogleMap mMap;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gpsmap);
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new GPSMapFragment()).commit();
-		}
+		setUpMapIfNeeded();
 	}
 
 	@Override
@@ -25,7 +26,24 @@ public class GPSMapActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.gpsmap, menu);
 		return true;
 	}
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        setUpMapIfNeeded();
+    }
 
+	 private void setUpMapIfNeeded() {
+	        if (mMap != null) {
+	            return;
+	        }
+	        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+	        if (mMap == null) {
+	            return;
+	        }
+	        // Initialize map options. For example:
+	        // mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+	    }
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
