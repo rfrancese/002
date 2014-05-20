@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="url_root_sito">http://salvatoremerola.altervista.org/archeotour</string>
     <string name="app_name">ArcheoTour</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -10,17 +11,15 @@
     <string name="buttonLabel_siteSearch">Ricerca sito</string>
     <string name="buttonLabel_showMap">Mappa</string>
     <string name="contentDescription_logoHome">Logo home page</string>
-    
+
     <!-- stringhe splash screen -->
     <string name="contentDescription_splashImage">SplashScreen</string>
-    
+
     <!-- stringe main site -->
     <string name="buttonLabel_description">Descrizione</string>
     <string name="buttonLabel_pdi">Punti Di Interesse</string>
     <string name="buttonLabel_news">Notizie</string>
     <string name="buttonLabel_info">Orari Tariffe Percorsi</string>
-    
-    
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -31,5 +30,6 @@
     <string name="title_activity_news">NewsActivity</string>
     <string name="title_activity_site_description">SiteDescriptionActivity</string>
     <string name="title_activity_site_info">SiteInfoActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

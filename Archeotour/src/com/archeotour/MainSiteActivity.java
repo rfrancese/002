@@ -8,16 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainSiteActivity extends ActionBarActivity {
-
+	
+	private static int id_sito;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_site);
-
+		id_sito = getIntent().getIntExtra("id_sito",0);
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new MainSiteFragment()).commit();
 		}
+
 	}
 
 	@Override
@@ -41,22 +44,26 @@ public class MainSiteActivity extends ActionBarActivity {
 	}
 
 	public void startSiteDescriptionActivity(View view) {
-		Intent intent = new Intent (this, SiteDescriptionActivity.class);
+		Intent intent = new Intent(this, SiteDescriptionActivity.class);
+		intent.putExtra("id_sito", id_sito);
 		startActivity(intent);
 	}
-	
+
 	public void startPDIActivity(View view) {
-		Intent intent = new Intent (this, PDIActivity.class);
+		Intent intent = new Intent(this, PDIActivity.class);
 		startActivity(intent);
 	}
-	
+
 	public void startNewsActivity(View view) {
-		Intent intent = new Intent (this, NewsActivity.class);
+		Intent intent = new Intent(this, NewsActivity.class);
 		startActivity(intent);
 	}
-	
+
 	public void startInfoActivity(View view) {
-		Intent intent = new Intent (this, SiteInfoActivity.class);
+		Intent intent = new Intent(this, SiteInfoActivity.class);
+		intent.putExtra("id_sito", id_sito);
 		startActivity(intent);
 	}
+
+	
 }

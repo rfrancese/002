@@ -36,18 +36,20 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
-			return true;
+			return true;  
 		}
 		return super.onOptionsItemSelected(item);
 	}
 	
 	public void startSearchActivity(View view) {
-		Intent intent = new Intent (this, MainSiteActivity.class);
+		Intent intent = new Intent (this, SearchActivity.class);
 		startActivity(intent);
 	}
 	public void startGPSMapActivity(View view) {
 		Intent intent = new Intent (this, GPSMapActivity.class);
 		startActivity(intent);
 	}
+	
+	 
 
 }

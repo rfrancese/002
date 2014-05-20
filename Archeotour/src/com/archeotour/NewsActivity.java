@@ -1,11 +1,14 @@
 package com.archeotour;
 
+import com.archeotour.SingleNewsFragment.OnFragmentInteractionListener;
+
 import android.support.v7.app.ActionBarActivity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class NewsActivity extends ActionBarActivity {
+public class NewsActivity extends ActionBarActivity implements OnFragmentInteractionListener{ 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,4 +40,11 @@ public class NewsActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onFragmentInteraction(Uri uri) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
