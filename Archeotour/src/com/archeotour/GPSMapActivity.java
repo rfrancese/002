@@ -1,59 +1,58 @@
 package com.archeotour;
 
-import android.support.v7.app.ActionBarActivity;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
+public class GPSMapActivity extends FragmentActivity implements
+		OnMarkerClickListener, OnMapLongClickListener {
 
-public class GPSMapActivity extends ActionBarActivity {
-	private GoogleMap mMap;
-	
+	private GoogleMap myMap;
+	PolylineOptions rectOptions;
+	Polyline polyline;
+	boolean markerClicked;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.v("map", "started");
 		setContentView(R.layout.activity_gpsmap);
-
-		setUpMapIfNeeded();
+		FragmentManager myFragmentManager = getSupportFragmentManager();
+		SupportMapFragment mySupportMapFragment =
+		(SupportMapFragment)myFragmentManager.findFragmentById(R.id.map);
+		myMap = mySupportMapFragment.getMap();
+		myMap.setMyLocationEnabled(true);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.gpsmap, menu);
 		return true;
 	}
-	
-	@Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
 
-	 private void setUpMapIfNeeded() {
-	        if (mMap != null) {
-	            return;
-	        }
-	        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-	        if (mMap == null) {
-	            return;
-	        }
-	        // Initialize map options. For example:
-	        // mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-	    }
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	public void onMapLongClick(LatLng point) {
+	}
+
+	@Override
+	public boolean onMarkerClick(Marker marker) {
+		return true;
+	}
 }
