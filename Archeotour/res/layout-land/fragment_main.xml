@@ -10,11 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/contentDescription_logoHome"
         android:scaleType="centerInside"
@@ -22,28 +19,28 @@
 
     <Button
         android:id="@+id/siteSearch"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:onClick="startSearchActivity"
         android:text="@string/buttonLabel_siteSearch" />
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/siteSearch"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" >
+      <ScrollView
+          android:id="@+id/scrollView1"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/siteSearch"
+          android:layout_marginTop="17dp" >
 
-        <LinearLayout
-            android:id="@+id/linear_layout_recent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-        </LinearLayout>
-    </ScrollView>
+          <LinearLayout
+              android:id="@+id/linear_layout_recent"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical" >
+          </LinearLayout>
+      </ScrollView>
 
 </RelativeLayout>

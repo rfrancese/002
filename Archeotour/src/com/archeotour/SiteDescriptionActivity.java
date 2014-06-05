@@ -1,14 +1,12 @@
 package com.archeotour;
 
 import android.support.v7.app.ActionBarActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class SiteDescriptionActivity extends ActionBarActivity {
-    
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -16,8 +14,14 @@ public class SiteDescriptionActivity extends ActionBarActivity {
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new SiteDescriptionFragment()).commit();
+					.add(R.id.container, new SiteDescriptionFragment())
+					.commit();
 		}
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
 	}
 
 	@Override

@@ -20,7 +20,11 @@ public class NewsActivity extends ActionBarActivity implements OnFragmentInterac
 					.add(R.id.container, new NewsFragment()).commit();
 		}
 	}
-
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

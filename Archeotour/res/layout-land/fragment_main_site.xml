@@ -3,53 +3,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.archeotour.MainSiteActivity$PlaceholderFragment" >
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="fill_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <WebView
                 android:id="@+id/MeteowebView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/button_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonLabel_description"
-                android:onClick="startSiteDescriptionActivity" />
+                android:gravity="center_horizontal"
+                android:onClick="startSiteDescriptionActivity"
+                android:text="@string/buttonLabel_description" />
 
             <Button
                 android:id="@+id/button_pdi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonLabel_pdi"
-                android:onClick="startPDIActivity" />
+                android:gravity="center_horizontal"
+                android:onClick="startPDIActivity"
+                android:text="@string/buttonLabel_pdi" />
 
             <Button
                 android:id="@+id/button_news"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonLabel_news"
-                android:onClick="startNewsActivity" />
+                android:gravity="center_horizontal"
+                android:onClick="startNewsActivity"
+                android:text="@string/buttonLabel_news" />
 
             <Button
                 android:id="@+id/button_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonLabel_info"
-                android:onClick="startInfoActivity"/>
+                android:gravity="center_horizontal"
+                android:onClick="startInfoActivity"
+                android:text="@string/buttonLabel_info" />
         </LinearLayout>
     </ScrollView>
 

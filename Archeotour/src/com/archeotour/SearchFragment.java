@@ -1,21 +1,17 @@
 package com.archeotour;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.archeotour.db.JsonSearchSuper;
+import com.archeotour.db.MyDatabase;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,25 +20,56 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
  * A placeholder fragment containing a simple view.
  */
+@SuppressLint("NewApi")
 public class SearchFragment extends Fragment {
 
 	private String input;
 	private EditText et;
-	View rootView;
+	private View rootView;
 
 	public SearchFragment() {
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		rootView = inflater.inflate(R.layout.fragment_search, container, false);
 		et = (EditText) rootView.findViewById(R.id.searchsitetext);
+
+		et.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				input = et.getText().toString();
+				new AsyncSearch(input, rootView).execute();
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+			}
+		});
 
 		ImageButton ib = (ImageButton) rootView.findViewById(R.id.searchbutton);
 		ib.setOnClickListener(new OnClickListener() {
@@ -56,23 +83,30 @@ public class SearchFragment extends Fragment {
 		return rootView;
 	}
 
-	private class AsyncSearch extends AsyncTask<Void, Void, Void> {
+	private class AsyncSearch extends JsonSearchSuper {
 
-		View rootv;
+		private String searchrslt;
+		private int idsito;
+		private String urlDatabase;
+		private TextView tv;
+		private LinearLayout v;
 
-		String searchrslt;
-		int idsito;
-		String urlDatabase;
-		TextView tv;
-		
-		JSONArray jsonArray;
-		JSONObject jsonob;
+		private JSONArray jsonArray;
+		private JSONObject jsonob;
+
+		private ProgressBar progress;
 
 		private AsyncSearch(String s, View r) {
-			urlDatabase = getResources().getString(
-					R.string.url_root_sito)
+			v = (LinearLayout) r.findViewById(R.id.llayoutsrchrsltshow);
+			progress = (ProgressBar) r.findViewById(R.id.progressBarsearch);
+
+			urlDatabase = getResources().getString(R.string.url_root_sito)
 					+ "/interrogate.php?partname=" + s + "&request=getlist";
-			rootv = r;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			progress.setVisibility(View.VISIBLE);
 		}
 
 		@Override
@@ -97,10 +131,12 @@ public class SearchFragment extends Fragment {
 		}
 
 		protected void onPostExecute(Void result) {
+
+			progress.setVisibility(View.INVISIBLE);
 			try {
-				LinearLayout v = (LinearLayout) rootv.findViewById(R.id.llayoutsrchrsltshow);
+				v.removeAllViews();
 				for (int i = 0; i < jsonArray.length(); i++) {
-					Log.v ("search onpostexecute", "for iterazione " + i);
+					Log.v("search onpostexecute", "for iterazione " + i);
 					jsonob = jsonArray.getJSONObject(i);
 					searchrslt = jsonob.getString("nomerslt");
 					idsito = jsonob.getInt("id");
@@ -108,11 +144,25 @@ public class SearchFragment extends Fragment {
 							getActivity().getApplicationContext()).inflate(
 							R.layout.searchresult, null);
 					rsltview.setId(idsito);
+					rsltview.setTag(searchrslt);
 					rsltview.setOnClickListener(new OnClickListener() {
+						private String name;
 						@Override
 						public void onClick(View v) {
+							
 							Log.v("click listener", "id pulsante " + v.getId());
-							Intent intent = new Intent(getActivity(), MainSiteActivity.class);
+							name = (String) v.getTag();
+							//prendo i dati della ricerca
+							//li aggiungo alle ricerche recenti
+							
+							MyDatabase mDb = new MyDatabase(getActivity().getApplicationContext());
+							mDb.open();
+							//-----------------------------------------
+							mDb.insertRecent(name, String.valueOf(v.getId()));
+							Log.v("Search Fragment", "inseriti: " + name + " " + v.getId());
+							//------------------------------------------
+							Intent intent = new Intent(getActivity(),
+									MainSiteActivity.class);
 							intent.putExtra("id_sito", v.getId());
 							startActivity(intent);
 						}
@@ -120,37 +170,12 @@ public class SearchFragment extends Fragment {
 					tv = (TextView) rsltview.findViewById(R.id.srchrslt);
 					tv.setText(searchrslt);
 					v.addView(rsltview, i);
-					// TODO: le view se cerchi 2 volte si sommano, fare in modo
-					// che pulisca i risultati prima di mostrare i nuovi
 				}
-			} catch (Exception e){
-				Log.e ("search onpostexecute", "err");
+			} catch (Exception e) {
+				Log.e("search onpostexecute", "err");
 				e.printStackTrace();
 			}
 
-		}
-
-		private JSONObject getJSONObject(String url) throws IOException,
-				MalformedURLException, JSONException {
-
-			HttpURLConnection conn = (HttpURLConnection) new URL(url)
-					.openConnection();
-
-			InputStream in = conn.getInputStream();
-
-			try {
-				StringBuilder sb = new StringBuilder();
-				BufferedReader r = new BufferedReader(new InputStreamReader(
-						new DoneHandlerInputStream(in)));
-				for (String line = r.readLine(); line != null; line = r
-						.readLine()) {
-					sb.append(line);
-				}
-
-				return new JSONObject(sb.toString());
-			} finally {
-				in.close();
-			}
 		}
 
 	}

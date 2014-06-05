@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="url_root_sito">http://salvatoremerola.altervista.org/archeotour</string>
+    <string name="url_root_sito">http://archeotour.altervista.org/DB_interface</string>
     <string name="app_name">ArcheoTour</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -23,16 +23,15 @@
     <string name="buttonLabel_info">Orari Tariffe Percorsi</string>
     
     
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_gpsmap">GPSMapActivity</string>
+    <string name="title_activity_search">Ricerca Sito</string>
+    <string name="title_activity_splash"></string>
+    <string name="dummy_button"> </string>
+    <string name="dummy_content"> </string>
     <string name="title_activity_main_site">MainSiteActivity</string>
-    <string name="title_activity_pdi">PDIActivity</string>
-    <string name="title_activity_news">NewsActivity</string>
-    <string name="title_activity_site_description">SiteDescriptionActivity</string>
-    <string name="title_activity_site_info">SiteInfoActivity</string>
+    <string name="title_activity_pdi">Punti di Interesse</string>
+    <string name="title_activity_news">News</string>
+    <string name="title_activity_site_description">Descrizione sito</string>
+    <string name="title_activity_site_info">Informazioni sito</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

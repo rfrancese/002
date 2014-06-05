@@ -1,4 +1,4 @@
-package com.archeotour;
+package com.archeotour.db;
 
 import java.io.FilterInputStream;
 import java.io.IOException;

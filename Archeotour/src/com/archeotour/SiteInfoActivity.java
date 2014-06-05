@@ -17,6 +17,12 @@ public class SiteInfoActivity extends ActionBarActivity {
 					.add(R.id.container, new SiteInfoFragment()).commit();
 		}
 	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

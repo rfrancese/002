@@ -1,21 +1,32 @@
 package com.archeotour;
 
+import com.archeotour.SingleNewsFragment.OnFragmentInteractionListener;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainSiteActivity extends ActionBarActivity {
-	
+public class MainSiteActivity extends ActionBarActivity implements
+		OnFragmentInteractionListener {
+
 	private static int id_sito;
-	
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_site);
-		id_sito = getIntent().getIntExtra("id_sito",0);
+		id_sito = getIntent().getIntExtra("id_sito", 0);
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new MainSiteFragment()).commit();
@@ -44,9 +55,16 @@ public class MainSiteActivity extends ActionBarActivity {
 	}
 
 	public void startSiteDescriptionActivity(View view) {
-		Intent intent = new Intent(this, SiteDescriptionActivity.class);
-		intent.putExtra("id_sito", id_sito);
-		startActivity(intent);
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			getSupportFragmentManager()
+					.beginTransaction()
+					.replace(R.id.right_container,
+							new SiteDescriptionFragment()).commit();
+		} else {
+			Intent intent = new Intent(this, SiteDescriptionActivity.class);
+			intent.putExtra("id_sito", id_sito);
+			startActivity(intent);
+		}
 	}
 
 	public void startPDIActivity(View view) {
@@ -55,15 +73,31 @@ public class MainSiteActivity extends ActionBarActivity {
 	}
 
 	public void startNewsActivity(View view) {
-		Intent intent = new Intent(this, NewsActivity.class);
-		startActivity(intent);
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			getSupportFragmentManager().beginTransaction()
+					.replace(R.id.right_container, new NewsFragment()).commit();
+		} else {
+			Intent intent = new Intent(this, NewsActivity.class);
+			intent.putExtra("id_sito", id_sito);
+			startActivity(intent);
+		}
 	}
 
 	public void startInfoActivity(View view) {
-		Intent intent = new Intent(this, SiteInfoActivity.class);
-		intent.putExtra("id_sito", id_sito);
-		startActivity(intent);
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			getSupportFragmentManager().beginTransaction()
+					.replace(R.id.right_container, new SiteInfoFragment())
+					.commit();
+		} else {
+			Intent intent = new Intent(this, SiteInfoActivity.class);
+			intent.putExtra("id_sito", id_sito);
+			startActivity(intent);
+		}
 	}
 
-	
+	@Override
+	public void onFragmentInteraction(Uri uri) {
+		// TODO Auto-generated method stub
+	}
+
 }

@@ -17,7 +17,11 @@ public class SearchActivity extends ActionBarActivity {
 					.add(R.id.container, new SearchFragment()).commit();
 		}
 	}
-
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

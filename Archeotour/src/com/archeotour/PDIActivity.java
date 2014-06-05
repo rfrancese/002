@@ -1,17 +1,10 @@
 package com.archeotour;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.archeotour.db.JsonSearchSuper;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback;
@@ -27,8 +20,6 @@ import com.google.android.gms.maps.model.PolylineOptions;
 
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -41,12 +32,16 @@ public class PDIActivity extends FragmentActivity implements
 	PolylineOptions rectOptions;
 	Polyline polyline;
 	boolean markerClicked;
-	private String api_key;
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		api_key = getString(R.string.google_places_api_key);
 
 		Log.v("map", "started");
 		setContentView(R.layout.activity_gpsmap);
@@ -55,19 +50,17 @@ public class PDIActivity extends FragmentActivity implements
 				.findFragmentById(R.id.map);
 		myMap = mySupportMapFragment.getMap();
 		myMap.setMyLocationEnabled(true);
-		
+
 		myMap.setOnMapLoadedCallback(new OnMapLoadedCallback() {
-			
+
 			@Override
 			public void onMapLoaded() {
-				Log.v("map", "ciao");
-				myMap.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(40.7738125,14.7932548) , 14.0f) );
+				myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
+						40.760735,14.473559), 14.0f));
 
-				 
 			}
 		});
 
-		
 		new getJsonClass().execute();
 	}
 
@@ -91,34 +84,8 @@ public class PDIActivity extends FragmentActivity implements
 		return true;
 	}
 
-	private class getJsonClass extends AsyncTask<Void, Void, Void> {
+	private class getJsonClass extends JsonSearchSuper {
 		private JSONArray jsonArray;
-
-		public getJsonClass() {
-		}
-
-		private JSONObject getJSONObject(String url) throws IOException,
-				MalformedURLException, JSONException {
-
-			HttpURLConnection conn = (HttpURLConnection) new URL(url)
-					.openConnection();
-
-			InputStream in = conn.getInputStream();
-
-			try {
-				StringBuilder sb = new StringBuilder();
-				BufferedReader r = new BufferedReader(new InputStreamReader(
-						new DoneHandlerInputStream(in)));
-				for (String line = r.readLine(); line != null; line = r
-						.readLine()) {
-					sb.append(line);
-				}
-
-				return new JSONObject(sb.toString());
-			} finally {
-				in.close();
-			}
-		}
 
 		protected void onPostExecute(Void result) {
 			Log.v("onpostexecute", "called");
@@ -134,15 +101,12 @@ public class PDIActivity extends FragmentActivity implements
 					Double lng = location.getDouble("lng");
 					String name = jsonob.getString("name");
 					String address = jsonob.getString("vicinity");
-					
+
 					myMap.addMarker(new MarkerOptions()
 							.icon(BitmapDescriptorFactory
-							.fromResource(R.drawable.mappin))
-							.anchor(0.0f, 1.0f)
-							.position(new LatLng(lat, lng))
-							.title(name)
-							.snippet(address)
-							);
+									.fromResource(R.drawable.mappin))
+							.anchor(0.0f, 1.0f).position(new LatLng(lat, lng))
+							.title(name).snippet(address));
 
 					Log.v("postexecute", name + " lat " + lat + "lng " + lng
 							+ " " + address);
@@ -157,9 +121,10 @@ public class PDIActivity extends FragmentActivity implements
 		@Override
 		protected Void doInBackground(Void... params) {
 
-			String lat = "40.7738125";
-			String lon = "14.7932548";
-			String radius = "500";
+			
+			String lat = "40.760735";
+			String lon = "14.473559";
+			String radius = "1000";
 			String types = "food";
 			String urlRequest = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
 					+ lat
@@ -174,7 +139,7 @@ public class PDIActivity extends FragmentActivity implements
 			JSONObject obj = null;
 
 			try {
-				obj = getJSONObject(urlRequest);
+				obj = super.getJSONObject(urlRequest);
 				jsonArray = obj.getJSONArray("results");
 
 			} catch (Exception e) {
@@ -182,7 +147,9 @@ public class PDIActivity extends FragmentActivity implements
 				Log.e("JSON Error", obj.toString());
 			}
 			return null;
+
 		}
 
 	}
+
 }
