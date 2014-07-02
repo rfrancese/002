@@ -101,8 +101,9 @@ public class SiteInfoFragment extends Fragment {
 					jsonob = jsonArray.getJSONObject(i);
 					String percorso = jsonob.getString("tipo_percorso");
 					double prezzo = jsonob.getDouble("prezzo");
-					testo += "  " + percorso + ": " + df.format(prezzo) + "€\n";
-
+					testo += "  " + percorso + ": " + df.format(prezzo) + "Û\n";
+					
+					testo += "\n";
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

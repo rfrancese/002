@@ -70,7 +70,7 @@ public class MainActivityFragment extends Fragment {
 				i++;
 			}while (c.moveToPrevious());
 		}
-
+		mDb.close();
 		return rootView;
 	}
 

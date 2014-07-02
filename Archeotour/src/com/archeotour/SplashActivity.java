@@ -126,6 +126,16 @@ public class SplashActivity extends Activity {
 		// while interacting with the UI.
 		//findViewById(R.id.dummy_button).setOnTouchListener(
 		//		mDelayHideTouchListener);
+		// Dopo 1.5 secondi chiudo l'app
+		
+		Handler handler = new Handler(); 
+	    handler.postDelayed(new Runnable() { 
+	         public void run() { 
+	        	 Intent newIntent = new Intent (com.archeotour.SplashActivity.this, com.archeotour.MainActivity.class );
+					startActivity(newIntent);
+	         } 
+	    }, 1500); 
+	
 	}
 
 	@Override

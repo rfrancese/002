@@ -28,6 +28,7 @@ public abstract class JsonSearchSuper extends AsyncTask<Void, Void, Void> {
 
 		try {
 			StringBuilder sb = new StringBuilder();
+			@SuppressWarnings("resource")
 			BufferedReader r = new BufferedReader(new InputStreamReader(
 					new DoneHandlerInputStream(in)));
 			for (String line = r.readLine(); line != null; line = r.readLine()) {

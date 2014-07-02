@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -157,9 +158,18 @@ public class MainSiteFragment extends Fragment {
 		protected Void doInBackground(Void... params) {
 			toRet.replaceAll("\n", "&#13");
 			toRet.replaceAll("\r", "&#10");
-
+			toRet = "<head><style> "
+					+ "body {background-color:black; color:white;}"
+					+ "a { color: white;text-decoration: none;}"
+					+ "a:hover { color:white; text-decoration:none; }"
+					+ "</style></head><body>" 
+					+ toRet 
+					+ "</body>";
+			
 			try {
 				meteoww.loadData(toRet, "text/html", "utf-8");
+				meteoww.setBackgroundColor(Color.parseColor("#A9A9A9"));
+		
 			} catch (Exception e){
 				meteoww.loadDataWithBaseURL(null, toRet, "text/html", "utf-8", null);
 			// meteoww.loadDataWithBaseURL(null, "aaa", "text/html", "utf-8", null);

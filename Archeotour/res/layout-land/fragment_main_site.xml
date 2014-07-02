@@ -20,6 +20,7 @@
                 android:id="@+id/MeteowebView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/black_overlay"
                 android:gravity="center_horizontal" />
 
             <Button
@@ -29,7 +30,7 @@
                 android:gravity="center_horizontal"
                 android:onClick="startSiteDescriptionActivity"
                 android:text="@string/buttonLabel_description" />
-
+            <!--
             <Button
                 android:id="@+id/button_pdi"
                 android:layout_width="match_parent"
@@ -37,6 +38,7 @@
                 android:gravity="center_horizontal"
                 android:onClick="startPDIActivity"
                 android:text="@string/buttonLabel_pdi" />
+            -->
 
             <Button
                 android:id="@+id/button_news"

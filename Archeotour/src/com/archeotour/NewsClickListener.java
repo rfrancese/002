@@ -18,9 +18,11 @@ public class NewsClickListener implements OnClickListener {
 	private Activity activity;
 
 	public NewsClickListener(String s, FragmentManager f, Activity activity) {
-		news = s;
+		news  =  s ;
 		fragmentmanager = f;
 		this.activity = activity;
+
+		Log.v("notizia inserita", "inserita la notizia: \n " + news);
 	}
 
 	@Override
@@ -35,11 +37,11 @@ public class NewsClickListener implements OnClickListener {
 		if (isLandscape()) {
 			if (isTablet()) {
 				transaction.replace(R.id.single_news_container, obgfr);
-			} else { // non è un tablet ma è orizzontale
+			} else { // non ï¿½ un tablet ma ï¿½ orizzontale
 				transaction.replace(R.id.right_container, obgfr);
 			}
 
-		} else { // se è in orizzontale
+		} else { // se ï¿½ in orizzontale
 			transaction.replace(R.id.container, obgfr);
 		}
 

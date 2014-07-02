@@ -1,6 +1,7 @@
 package com.archeotour;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -61,6 +62,7 @@ public class SingleNewsFragment extends Fragment {
 				false);
 		TextView text = (TextView) root.findViewById(R.id.singlenews);
 		text.setText(Html.fromHtml(news));
+		text.setTextColor(Color.parseColor("#FFFFFF"));
 		
 		Log.v ("news", news);
 		//text.loadData(news,  "text/html", "utf-8");

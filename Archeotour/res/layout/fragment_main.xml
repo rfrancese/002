@@ -29,14 +29,22 @@
         android:layout_marginTop="22dp"
         android:onClick="startSearchActivity"
         android:text="@string/buttonLabel_siteSearch" />
+    
+     <Button
+        android:id="@+id/nearMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/siteSearch"
+        android:layout_below="@+id/siteSearch"
+        android:onClick="nearMe"
+        android:text="@string/buttonLabel_nearme" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/siteSearch"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" >
+        android:layout_alignLeft="@+id/nearMe"
+        android:layout_below="@+id/nearMe" >
 
         <LinearLayout
             android:id="@+id/linear_layout_recent"

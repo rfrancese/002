@@ -26,6 +26,13 @@
         android:layout_marginTop="20dp"
         android:onClick="startSearchActivity"
         android:text="@string/buttonLabel_siteSearch" />
+    <Button
+        android:id="@+id/nearMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/siteSearch"
+        android:layout_below="@+id/siteSearch"
+        android:onClick="nearMe"/>
 
       <ScrollView
           android:id="@+id/scrollView1"

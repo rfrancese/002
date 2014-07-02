@@ -45,6 +45,11 @@ public class MainActivity extends ActionBarActivity {
 		startActivity(intent);
 	}
 	
+	public void nearMe(View view){
+		Intent intent = new Intent(this, PDIActivity.class);
+		startActivity(intent);
+	}
+	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();

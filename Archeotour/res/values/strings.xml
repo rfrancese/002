@@ -21,6 +21,7 @@
     <string name="buttonLabel_pdi">Punti Di Interesse</string>
     <string name="buttonLabel_news">Notizie</string>
     <string name="buttonLabel_info">Orari Tariffe Percorsi</string>
+    <string name="buttonLabel_nearme">Vicino a Me</string>
     
     
     <string name="title_activity_search">Ricerca Sito</string>
